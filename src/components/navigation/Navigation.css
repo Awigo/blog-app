@@ -1,0 +1,30 @@
+/* Reset some default styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Style for the navigation bar */
+  .navbar {
+    background-color: white; /* Background color */
+    overflow: hidden; /* Hide overflowing content */
+    padding-left: 20%;
+  }
+  
+  /* Style for navigation bar links (anchors) */
+  .navbar a {
+    float: left; /* Float the links to create a horizontal layout */
+    display: block; /* Display as block elements */
+    color: black; /* Text color */
+    text-align: center; /* Center the text */
+    padding: 14px 16px; /* Padding around the links */
+    text-decoration: none; /* Remove underline from links */
+  }
+  
+  /* Change color on hover */
+  .navbar a:hover {
+    background-color: grey; /* Background color on hover */
+    color: white; /* Text color on hover */
+  }
+  

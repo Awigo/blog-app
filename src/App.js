@@ -1,23 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
+import albania from "./images/albania.png";
+import bosnia from "./images/bosnia.png";
+import Post from './components/post/Post.js';
+import Navigation from './components/navigation/Navigation';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navigation></Navigation>
+      <Post title="Albania" image={albania}></Post>
+      <Post title="Bosnia" image={bosnia}></Post>
     </div>
   );
 }
