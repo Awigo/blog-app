@@ -2,15 +2,21 @@ const NewPost = (props) => {
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        console.log(event.target.country.value);
-        props.onNewPostData(event.target.country.value);
+        props.onNewPostData({
+            "name": event.target.name.value,
+            "image": event.target.image.value
+        });
     }
 
     return (
         <form onSubmit={handleSubmit}>
             <label>
             Country:
-                <input type="text" name="country" />
+                <input type="text" name="name" />
+            </label>
+            <label>
+            Image url:
+                <input type="text" name="image" />
             </label>
             <br></br>
             <input type="submit" value="Add" />

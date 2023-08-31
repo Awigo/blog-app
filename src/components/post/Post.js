@@ -10,7 +10,7 @@ const Post = (props) => {
 
     return (
         <div className="card">
-            <img src={props.image} className="image"></img>
+            <img src={props.image} className="image" alt="img"></img>
             <h2>{props.title}</h2>
             <h2>Views: {counter}</h2>
             <button className="button" onClick={addOneView}>Add one view</button>

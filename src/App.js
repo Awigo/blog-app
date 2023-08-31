@@ -8,25 +8,28 @@ import { useState } from 'react';
 
 function App() {
 
-  const [newPostData, setNewPostData] = useState('');
+  const [countries, setCountries] = useState([{
+    name: "Albania",
+    image: albania
+  },
+  {
+    name: "Bosnia",
+    image: bosnia
+  }]);
 
-  const handleNewPost = (data) => {
-    console.log("New post data from app.js = " + data);
-    setNewPostData(data);
+  const handleNewCountry = (newCountry) => {
+    console.log("New country from app.js = " + newCountry);
+    console.log("Nec country img = " + newCountry.image);
+    setCountries(previousCountries => [...previousCountries, newCountry]);
   }
 
   return (
     <div className="App">
       <Navigation></Navigation>
-      <Post title="Albania" image={albania}></Post>
-      <Post title="Bosnia" image={bosnia}></Post>
-      { newPostData == '' ? (
-        <p>Empty post</p>
-      ) : (
-        <Post title={newPostData}></Post>
-      )
-      }
-      <NewPost onNewPostData={handleNewPost}></NewPost>
+      {countries.map(country => (
+        <Post title={country.name} image={country.image}></Post>
+      ))}
+      <NewPost onNewPostData={handleNewCountry}></NewPost>
     </div>
   );
 }
